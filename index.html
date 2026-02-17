@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICE CORE | Professional Radiator Coolant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .modal { transition: opacity 0.25s ease; }
+        body { scroll-behavior: smooth; }
+        #slider { display: flex; transition: transform 0.7s ease-in-out; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-900 tracking-tighter italic">ÌCE CORE</div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#products" class="hover:text-blue-600 transition">Products</a>
+                <a href="#about" class="hover:text-blue-600 transition">About Us</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-[500px] md:h-[650px] overflow-hidden bg-gray-900 group">
+        <div id="slider" class="h-full">
+            <div class="min-w-full relative h-full">
+                <img src="C:\Users\admin\Downloads\icecore-ecommerce\images\product1.jpeg" class="w-full h-full object-cover opacity-60" alt="Full Range">
+                <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-2xl">PROFESSIONAL PROTECTION</h1>
+                    <p class="text-lg md:text-2xl max-w-2xl font-light">Engineered for peak performance in extreme temperatures.</p>
+                </div>
+            </div>
+            <div class="min-w-full relative h-full">
+                <img src="C:\Users\admin\Downloads\icecore-ecommerce\images\product2.jpeg" class="w-full h-full object-cover opacity-60" alt="Product Focus">
+                <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-4">ADVANCED FORMULA</h2>
+                    <p class="text-lg md:text-2xl max-w-2xl font-light">Anti-rust and anti-corrosion technology for long engine life.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 p-4 rounded-full hover:bg-white/40 text-white z-20 opacity-0 group-hover:opacity-100 transition">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 p-4 rounded-full hover:bg-white/40 text-white z-20 opacity-0 group-hover:opacity-100 transition">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+            <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer border border-white" onclick="currentSlideTo(0)"></div>
+            <div class="dot w-3 h-3 rounded-full bg-white/50 cursor-pointer border border-white" onclick="currentSlideTo(1)"></div>
+        </div>
+    </section>
+
+    <section id="products" class="py-20 container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-blue-900 mb-4">Our Premium Lineup</h2>
+            <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all border border-gray-100" onclick="openModal('green')">
+                <div class="h-72 p-6 bg-gray-50 flex items-center justify-center">
+                    <img src="C:\Users\admin\Downloads\icecore-ecommerce\images\product3.jpeg" class="max-h-full object-contain" alt="Green Coolant">
+                </div>
+                <div class="p-8">
+                    <span class="text-green-600 font-bold text-xs tracking-widest uppercase">Heavy Duty</span>
+                    <h3 class="text-xl font-bold mt-2">Ice Core Green Coolant</h3>
+                    <p class="text-gray-500 mt-3 line-clamp-2 italic text-sm">Tap for technical specifications...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all border border-gray-100" onclick="openModal('red')">
+                <div class="h-72 p-6 bg-gray-50 flex items-center justify-center">
+                    <img src="C:\Users\admin\Downloads\icecore-ecommerce\images\product3.jpeg" class="max-h-full object-contain" alt="Red Coolant">
+                </div>
+                <div class="p-8">
+                    <span class="text-red-600 font-bold text-xs tracking-widest uppercase">Extended Life</span>
+                    <h3 class="text-xl font-bold mt-2">Ice Core Red Coolant</h3>
+                    <p class="text-gray-500 mt-3 line-clamp-2 italic text-sm">Tap for technical specifications...</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all border border-gray-100" onclick="openModal('bottle')">
+                <div class="h-72 p-6 bg-gray-50 flex items-center justify-center">
+                    <img src="C:\Users\admin\Downloads\icecore-ecommerce\images\product2.jpeg" class="max-h-full object-contain" alt="1L Bottle">
+                </div>
+                <div class="p-8">
+                    <span class="text-blue-600 font-bold text-xs tracking-widest uppercase">Compact Protection</span>
+                    <h3 class="text-xl font-bold mt-2">Ice Core 1L Antifreeze</h3>
+                    <p class="text-gray-500 mt-3 line-clamp-2 italic text-sm">Tap for technical specifications...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-blue-900 text-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Why Professionals Choose ICE CORE?</h2>
+                <p class="text-lg text-blue-100 leading-relaxed mb-6">
+                    ICE CORE is a leader in radiator protection technology. Our products are rigorously tested to ensure they meet international standards for automotive safety and efficiency. 
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center"><i class="fas fa-check-circle mr-3 text-green-400"></i> High Boiling Point Formula</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle mr-3 text-green-400"></i> Advanced Anti-Rust Protection</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle mr-3 text-green-400"></i> Compatible with all modern alloys</li>
+                </ul>
+            </div>
+            <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md">
+                <img src="C:\Users\admin\Downloads\icecore-ecommerce\images\product2.jpeg" class="rounded-xl shadow-lg" alt="About Ice Core">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 container mx-auto px-6">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+            <div class="md:w-2/5 bg-blue-600 p-12 text-white">
+                <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
+                <p class="mb-8 opacity-80">Looking for bulk orders or distribution? Drop us a message.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span>+1 800-ICE-CORE</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span>info@icecore.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-3/5 p-12">
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="First Name" class="w-full p-4 bg-gray-50 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
+                        <input type="text" placeholder="Last Name" class="w-full p-4 bg-gray-50 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
+                    </div>
+                    <input type="email" placeholder="Your Email" class="w-full p-4 bg-gray-50 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none">
+                    <textarea rows="4" placeholder="Your Message" class="w-full p-4 bg-gray-50 border rounded-xl focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+                    <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-all shadow-lg">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="productModal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[100] p-4">
+        <div class="absolute w-full h-full bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl z-50 overflow-hidden">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="modalTitle" class="text-2xl font-bold text-blue-900"></h3>
+                    <button onclick="closeModal()" class="text-3xl text-gray-400 hover:text-black">&times;</button>
+                </div>
+                <img id="modalImg" src="" class="w-full h-64 object-contain mb-6 bg-gray-50 rounded-2xl p-4">
+                <div id="modalDescription" class="text-gray-600 leading-relaxed space-y-3"></div>
+                <button onclick="closeModal()" class="mt-8 w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition">Close Product View</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // SLIDER LOGIC
+        let currentSlide = 0;
+        const totalSlides = 2; 
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-white', i === currentSlide);
+                dot.classList.toggle('w-8', i === currentSlide);
+                dot.classList.toggle('bg-white/50', i !== currentSlide);
+            });
+        }
+
+        function moveSlide(dir) {
+            currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function currentSlideTo(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Auto play slider
+        let slideInterval = setInterval(() => moveSlide(1), 5000);
+
+        // Pause on hover
+        document.getElementById('home').addEventListener('mouseenter', () => clearInterval(slideInterval));
+        document.getElementById('home').addEventListener('mouseleave', () => slideInterval = setInterval(() => moveSlide(1), 5000));
+
+        // Initialize slider
+        updateSlider();
+
+        // MODAL LOGIC
+        const productData = {
+            'green': {
+                title: 'Professional Green Coolant',
+                img: 'WhatsApp Image.jpeg',
+                desc: '<p><strong>Protection:</strong> Advanced Anti-Freeze and Anti-Boil.</p><p><strong>Color:</strong> Fluorescent Green for leak detection.</p><p><strong>Ideal for:</strong> Heavy-duty vehicle radiators and multi-purpose passenger cars.</p>'
+            },
+            'red': {
+                title: 'Extended Life Red Coolant',
+                img: 'WhatsApp Image.jpeg',
+                desc: '<p><strong>Technology:</strong> Organic Acid Technology (OAT).</p><p><strong>Lifespan:</strong> Lasts up to 5 years or 250,000 km.</p><p><strong>Benefit:</strong> Superior protection for aluminum radiator components.</p>'
+            },
+            'bottle': {
+                title: 'Ice Core Antifreeze 1L',
+                img: 'WhatsApp Image 2026-02-14 at 11.18.07 AM.jpeg',
+                desc: '<p><strong>Concentration:</strong> High-purity formula.</p><p><strong>Convenience:</strong> Ergonomic 1L bottle for easy storage and top-ups.</p><p><strong>Compatibility:</strong> Mixes easily with distilled water.</p>'
+            }
+        };
+
+        function openModal(key) {
+            const data = productData[key];
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('modalDescription').innerHTML = data.desc;
+            
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden'; // Stop scrolling background
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto'; // Resume scrolling
+        }
+    </script>
+</body>
+</html>
